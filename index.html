@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin</title>
+<link rel="stylesheet" href="Admin_all.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<style>
+.heading {
+	font-size: 20px;
+	font-weight: 600;
+	color: #3D5AFE;
+}
+
+.line1 {
+	color: #000;
+	font-size: 12px;
+}
+
+.line2 {
+	color: #000;
+	font-size: 12px;
+}
+
+.line3 {
+	color: #000;
+	font-size: 12px;
+}
+
+.cards {
+	transition: all 0.2s ease;
+	cursor: pointer;
+}
+
+.cards:hover {
+	box-shadow: 5px 6px 6px 2px #e9ecef;
+	transform: scale(1.1);
+}
+
+.btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: .8rem 2.8rem;
+	border-radius: 5rem;
+	border-top-left-radius: 0;
+	border: 0.2rem solid #130f40;
+	cursor: pointer;
+	background: none;
+	color: #130f40;
+	font-size: 1.7rem;
+	overflow: hidden;
+	z-index: 0;
+	position: relative;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #130f40;
+	z-index: -1;
+	-webkit-transition: .2s linear;
+	transition: .2s linear;
+	-webkit-clip-path: circle(0% at 0% 5%);
+	clip-path: circle(0% at 0% 5%);
+}
+
+.btn:hover::before {
+	-webkit-clip-path: circle(100%);
+	clip-path: circle(100%);
+}
+
+.btn:hover {
+	color: #fff;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+	font-family: Roboto, sans-serif;
+}
+.wrapper {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.wrapper {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.card {
+    padding: 5px;
+    width: 13rem;
+    height: 80px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    position: relative
+}
+
+.coral {
+    transform: rotate(90deg)
+}
+
+.card-details {
+    margin-top: 3px
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.plus {
+    color: white;
+    font-size: 15px
+}
+
+.amount {
+    color: white
+}
+
+.number {
+    line-height: 17px;
+    color: white
+}
+
+.upper:hover .card {
+    animation: height 1s ease-in forwards
+}
+
+.upper:hover .card-details {
+    animation: card-details 1.5s ease-in forwards
+}
+
+@keyframes card-details {
+    0% {
+        left: 3%;
+        top: 0%
+    }
+
+    100% {
+        margin-top: 5px;
+        left: 4%;
+        top: 15%;
+        position: absolute
+    }
+}
+
+.card:hover .coral {
+    animation: coral 2s ease-in-out forwards
+}
+
+@keyframes coral {
+    0% {
+        left: 0%
+    }
+
+    100% {
+        left: -89%
+    }
+}
+
+.upper:hover .card-number {
+    top: 45%;
+    position: relative
+}
+
+
+
+@keyframes height {
+    0% {
+        height: 70px
+    }
+
+    25% {
+        height: 100px
+    }
+
+    50% {
+        height: 140px
+    }
+
+    50% {
+        height: 170px
+    }
+
+    100% {
+        height: 210px
+    }
+}
+</style>
+</head>
+<body
+	style="background-image: linear-gradient(to right, #eecda3, #ef629f);">
+	<div style="background-color: pink">
+		<nav class="navbar navbar-expand-lg navbar-dark" style="font-size:17px">
+        <a class="navbar-brand" href="" style="color:black;padding-left:1px;font-size: 20px"><b>Paws & Tails</b></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav mr-auto justify-content-left">
+          <li class="nav-item">
+              <a class="nav-link" href="Admin.html" style="color:black">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CustomerDetails.html" style="color:black">Customer Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="PetDetails.html" style="color:black">Pet Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FoodDetails.html" style="color:black">Food Info</a>
+            </li>
+              <li class="nav-item">
+              <a class="nav-link"  href="OrderDetails.html" style="color:black">Order Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="login.html" style="color:black">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+      
+      <div style="background-image: url('graph.jpg');">
+		<h1 style="font-size: xx-large;padding-top: 8%;padding-left: 5%">
+			<span style="color: #e67e22;">Welcome Back </span>Admin
+		</h1>
+		<h3 style="font-size: xx-large;padding-top:2%;padding-left: 8%">
+			Your'e Monthly <span style="color: #e67e22;">Analysis is Here!</span>
+		</h3>
+ <div class="row container">
+ 	<div class="col-1"></div>
+     <div class="col-3">			
+	<div class="wrapper">
+		<div class="upper">
+			<div class="card" style="background-color: grey;">
+				<div class="details" style="padding-left:10%">
+					<div class="d-flex flex-column card-details">
+						<span class="plus">Total Sales this month</span>
+						<h4 class="amount">Rs:152000</h4>
+					</div>
+				</div>
+				<div
+					class="d-flex justify-content-between mt-3 align-items-center card-number">
+					<div class="d-flex flex-column number" style="padding-top: 10px">
+					   <table>
+					   	<tr>
+					   	 <td>Week 1:</td>
+					   	 <td>Rs:40000</td>
+					   	</tr>
+					   	<tr>
+					   	 <td>Week 2:</td>
+					   	 <td>Rs:50000</td>
+					   	</tr>
+					   <tr>
+					   	 <td>Week 3:</td>
+					   	 <td>Rs:30000</td>
+					   	</tr>
+					  <tr>
+					   	 <td>Week 4:</td>
+					   	 <td>Rs:32000</td>
+					   	</tr>
+					   	 </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+ <div class="col-3 container">
+	<div class="wrapper">
+		<div class="upper">
+			<div class="card " style="background-color: grey">
+				<div class="details">
+					<div class="d-flex flex-column card-details">
+						<span class="plus">Monthly Analysis</span>
+						<h4 class="amount">Pre vs Curr Month</h4>
+					</div>
+				</div>
+				<div
+					class="d-flex justify-content-between mt-3 align-items-center card-number">
+					<div class="d-flex flex-column number" style="padding-top: 10px">
+					    <table>
+					   	<tr>
+					   	 <td>Previous Month</td>
+					   	 <td>Rs:173000</td>
+					   	</tr>
+					   	<tr>
+					   	 <td>Current Month</td>
+					   	 <td>Rs:152000</td>
+					   	</tr>
+					   	</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+ <div class="col-3 container">
+	<div class="wrapper">
+		<div class="upper">
+			<div class="card " style="background-color: grey">
+				<div class="details">
+					<div class="d-flex flex-column card-details">
+						<span class="plus">Profit & Loss</span>
+						<h4 class="amount">Pre vs Curr Month</h4>
+					</div>
+				</div>
+				<div
+					class="d-flex justify-content-between mt-3 align-items-center card-number">
+					<div class="d-flex flex-column number" style="padding-top: 10px">
+					  Previous Month
+					  <table>
+					   	<tr>
+					   	 <td style="padding-left:10px">  Profit:10%(INC)</td>
+					   </table>
+					   Current Month
+					   <table>
+					   	<tr>
+					   	 <td style="padding-left:10px">  Profit:8%(INC)</td>
+					   </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+	<div>
+		<div class="main text-center mt-5">
+			<h3 style="font-size: xx-large;">
+				<span style="color: #e67e22;">Add New </span>Dogs & Cat Breeds and
+				Foods..
+				</h3>
+		</div>
+		<div class="container mt-4 d-flex justify-content-center">
+
+			<div class="row g-0">
+
+				<div class="col-md-4 px-2 border-right">
+					<div class="cards">
+						<div class="first bg-white p-4 text-center">
+							<img style="width: 20%; height: 20%" src="2.jpg" />
+
+							<h5>
+								<span style="color: #e67e22;">Add New </span>Dog
+							</h5>
+							<a href="PetDetails.html"><button class="btn">Click to add</button></a>
+
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-md-4 px-2 border-right">
+					<div class="cards">
+						<div class=" second bg-white p-4 text-center">
+							<img style="width: 30%; height: 30%" src="catlogo.jpeg" />
+
+							<h5>
+								<span style="color: #e67e22;">Add New </span>cat
+							</h5>
+							<a href="PetDetails.html"><button class="btn">Click to add</button></a>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 px-2">
+
+					<div class="cards">
+						<div class=" third bg-white p-4 text-center">
+							<img style="width: 40%; height: 40%" src="dogcatfood.jpg" />
+							<h5>
+								<span style="color: #e67e22;">Add New </span>Dog & Cat Food
+							</h5>
+							<a href="FoodDetails.html"><button class="btn">Click to add</button></a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+</body>
+<script src="Admin_js.js"></script>
+</html>

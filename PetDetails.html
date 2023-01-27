@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PetDetails</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<style>
+.btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: .8rem 2.8rem;
+	border-radius: 5rem;
+	border-top-left-radius: 0;
+	border: 0.2rem solid #130f40;
+	cursor: pointer;
+	background: none;
+	color: #130f40;
+	font-size: 1.7rem;
+	overflow: hidden;
+	z-index: 0;
+	position: relative;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #130f40;
+	z-index: -1;
+	-webkit-transition: .2s linear;
+	transition: .2s linear;
+	-webkit-clip-path: circle(0% at 0% 5%);
+	clip-path: circle(0% at 0% 5%);
+}
+
+.btn:hover::before {
+	-webkit-clip-path: circle(100%);
+	clip-path: circle(100%);
+}
+
+.btn:hover {
+	color: #fff;
+}
+
+
+</style>
+</head>
+<body style="background-image: linear-gradient(to right, #eecda3, #ef629f);">
+<div style="background-color: pink">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="font-size:17px">
+      <div class="btn" onclick="history.back()">
+		<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></div>
+        <a class="navbar-brand" href="" style="color:black;padding-left:1px;font-size: 20px"><b>Paws & Tails</b></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav mr-auto justify-content-left">
+          <li class="nav-item">
+              <a class="nav-link" href="Admin.html" style="color:black">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CustomerDetails.html" style="color:black">Customer Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="PetDetails.html" style="color:black">Pet Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FoodDetails.html" style="color:black">Food Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="OrderDetails.html" style="color:black">Order Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="login.html" style="color:black">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+	<div class="admindog">
+		<h1 style="font-size: xx-large;">
+			<span style="color: #e67e22;">Dog </span>Details..
+		</h1>
+
+		<table class="table">
+			<tr>
+				<td>Pet.No</td>
+				<td>Breed Name</td>
+				<td>Stock</td>
+				<td>Male</td>
+				<td>Female</td>
+				<td>Color</td>
+				<td>Availability</td>
+			</tr>
+			<tr>
+				<td>0001</td>
+				<td>Labrador</td>
+				<td>08</td>
+				<td>05</td>
+				<td>03</td>
+				<td>White,black</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<td>0002</td>
+				<td>Hussky</td>
+				<td>03</td>
+				<td>03</td>
+				<td>00</td>
+				<td>White,grey</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<td>0003</td>
+				<td>Beagle</td>
+				<td>05</td>
+				<td>02</td>
+				<td>03</td>
+				<td>brown</td>
+				<td>Yes</td>
+			</tr>
+
+		</table>
+		<div class="row container" style="padding-top: 5%">
+			<div class="col">
+				<div class="Edit" style="padding-left: 5%">
+					<h1 style="font-size: xx-large;">
+						<span style="color: #e67e22;">Edit</span> Dog Details..
+					</h1>
+					<div class="editdog" style="padding-left: 15%">
+						<button type="button" class="btn " data-bs-toggle="modal"
+							data-bs-target="#staticBackdrop">Edit</button>
+					</div>
+					<div class="modal fade" id="staticBackdrop"
+						data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+						aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel">
+										<span style="color: #e67e22">Edit</span> Dog Details.
+									</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<table class="table" style="font-size: 18px">
+										<tr>
+											<td>Enter Dog ID:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Column to Edit:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter New Data:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+									</table>
+									<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Edit</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="Edit" style="padding-left: 5%">
+					<h1 style="font-size: xx-large;">
+						<span style="color: #e67e22;">Add</span> New Dog..
+					</h1>
+					<div class="editdog" style="padding-left: 15%">
+						<button type="button" class="btn " data-bs-toggle="modal"
+							data-bs-target="#staticBackdrop1">Add</button>
+					</div>
+					<div class="modal fade" id="staticBackdrop1"
+						data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+						aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel1">
+										<span style="color: #e67e22">Add</span> New Dog.
+									</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<table class="table" style="font-size: 18px">
+										<tr>
+											<td>Enter Dog ID:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Breed Name</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Stock:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Male count:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Female count:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Color:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Availability:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+									</table>
+									<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+
+				<div class="remove" style="padding-left: 5%">
+					<h1 style="font-size: xx-large;">
+						<span style="color: #e67e22;">Remove</span> Dog..
+					</h1>
+					<div class="editdog" style="padding-left: 15%">
+						<button type="button" class="btn " data-bs-toggle="modal"
+							data-bs-target="#staticBackdroprem1">Remove</button>
+					</div>
+					<div class="modal fade" id="staticBackdroprem1"
+						data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+						aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel1">
+										<span style="color: #e67e22">Remove</span> Dog.
+									</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<table class="table" style="font-size: 18px">
+										<tr>
+											<td>Enter Dog ID:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+									</table>
+									<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Remove</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	<div class="admincat" style="padding-top: 8%">
+		<h1 style="font-size: xx-large;">
+			<span style="color: #e67e22;">Cat </span>Details..
+		</h1>
+
+		<table class="table">
+			<tr>
+				<td>Pet.No</td>
+				<td>Breed Name</td>
+				<td>Stock</td>
+				<td>Male</td>
+				<td>Female</td>
+				<td>Color</td>
+				<td>Availability</td>
+			</tr>
+			<tr>
+				<td>c001</td>
+				<td>Persian</td>
+				<td>08</td>
+				<td>05</td>
+				<td>03</td>
+				<td>White,black</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<td>c002</td>
+				<td>Domestic ShortHair</td>
+				<td>03</td>
+				<td>03</td>
+				<td>00</td>
+				<td>White,grey</td>
+				<td>Yes</td>
+			</tr>
+			<tr>
+				<td>c003</td>
+				<td>Exotic Shorthair</td>
+				<td>05</td>
+				<td>02</td>
+				<td>03</td>
+				<td>brown</td>
+				<td>Yes</td>
+			</tr>
+
+		</table>
+		<div class="row container" style="padding-top: 5%">
+			<div class="col">
+				<div class="Edit" style="padding-left: 5%">
+					<h1 style="font-size: xx-large;">
+						<span style="color: #e67e22;">Edit</span> Cat Details..
+					</h1>
+					<div class="editdog" style="padding-left: 15%">
+						<button type="button" class="btn " data-bs-toggle="modal"
+							data-bs-target="#staticBackdropcat">Cat</button>
+					</div>
+					<div class="modal fade" id="staticBackdropcat"
+						data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+						aria-labelledby="staticBackdropLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel">
+										<span style="color: #e67e22">Edit</span> Cat Details.
+									</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<table class="table" style="font-size: 18px">
+										<tr>
+											<td>Enter Cat ID:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Column to Edit:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter New Data:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+									</table>
+									<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Edit</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+
+				<div class="Edit" style="padding-left: 5%">
+					<h1 style="font-size: xx-large;">
+						<span style="color: #e67e22;">Add</span> New Cat..
+					</h1>
+					<div class="editdog" style="padding-left: 15%">
+						<button type="button" class="btn " data-bs-toggle="modal"
+							data-bs-target="#staticBackdropcat1">Add</button>
+					</div>
+					<div class="modal fade" id="staticBackdropcat1"
+						data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+						aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel1">
+										<span style="color: #e67e22">Add</span> New Cat.
+									</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<table class="table" style="font-size: 18px">
+										<tr>
+											<td>Enter Cat ID:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Breed Name</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Stock:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Male count:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Female count:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Color:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+										<tr>
+											<td>Enter Availability:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+									</table>
+									<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Add</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+
+				<div class="removeCat" style="padding-left: 5%">
+					<h1 style="font-size: xx-large;">
+						<span style="color: #e67e22;">Remove</span> Cat..
+					</h1>
+					<div class="editdog" style="padding-left: 15%">
+						<button type="button" class="btn " data-bs-toggle="modal"
+							data-bs-target="#staticBackdropremcat1">Remove</button>
+					</div>
+					<div class="modal fade" id="staticBackdropremcat1"
+						data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+						aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h1 class="modal-title fs-5" id="staticBackdropLabel1">
+										<span style="color: #e67e22">Remove</span> Cat.
+									</h1>
+									<button type="button" class="btn-close" data-bs-dismiss="modal"
+										aria-label="Close"></button>
+								</div>
+								<div class="modal-body">
+									<table class="table" style="font-size: 18px">
+										<tr>
+											<td>Enter Cat ID:</td>
+											<td><input type="text" style="border-color: black"></td>
+										</tr>
+									</table>
+									<br>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary"
+										data-bs-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-primary">Remove</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

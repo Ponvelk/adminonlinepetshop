@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>PetDetails</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<style>
+.btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: .8rem 2.8rem;
+	border-radius: 5rem;
+	border-top-left-radius: 0;
+	border: 0.2rem solid #130f40;
+	cursor: pointer;
+	background: none;
+	color: #130f40;
+	font-size: 1.7rem;
+	overflow: hidden;
+	z-index: 0;
+	position: relative;
+}
+
+.btn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: #130f40;
+	z-index: -1;
+	-webkit-transition: .2s linear;
+	transition: .2s linear;
+	-webkit-clip-path: circle(0% at 0% 5%);
+	clip-path: circle(0% at 0% 5%);
+}
+
+.btn:hover::before {
+	-webkit-clip-path: circle(100%);
+	clip-path: circle(100%);
+}
+
+.btn:hover {
+	color: #fff;
+}
+.hidden{
+display: none;
+
+}
+
+</style>
+</head>
+<body style="background-image: linear-gradient(to right, #eecda3, #ef629f);">
+<div style="background-color: pink">
+	<nav class="navbar navbar-expand-lg navbar-dark" style="font-size:17px">
+      <div class="btn" onclick="history.back()">
+		<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+</svg></div>
+        <a class="navbar-brand" href="" style="color:black;padding-left:1px;font-size: 20px"><b>Paws & Tails</b></a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav mr-auto justify-content-left">
+          <li class="nav-item">
+              <a class="nav-link" href="Admin.html" style="color:black">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CustomerDetails.html" style="color:black">Customer Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="PetDetails.html" style="color:black">Pet Info</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="FoodDetails.html" style="color:black">Food Info</a>
+            </li>
+             <li class="nav-item">
+              <a class="nav-link"  href="OrderDetails.html" style="color:black">Order Details</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="login.html" style="color:black">Log Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+	<div class="orderdetails">
+		<h1 style="font-size: xx-large;">
+			<span style="color: #e67e22;">Order</span>Details..
+		</h1>
+
+		<table class="table">
+			<tr>
+				<td>Order.Id</td>
+				<td>Customer Name</td>
+				<td>Date of order</td>
+				<td>Status</td>
+				<td>Ordered item</td>
+				<td>Total Price</td>
+			</tr>
+			<tr>
+				<td>or001</td>
+				<td>Aswath</td>
+				<td>24.01.2023</td>
+				<td>Shipped</td>
+				<td>Dog-Labrador-Male-White</td>
+				<td>10000</td>
+			</tr>
+			<tr>
+				<td>or002</td>
+				<td>Ponvel</td>
+				<td>15.01.2023</td>
+				<td>Delivered</td>
+				<td>Dog-Hussky-Male-White</td>
+				<td>50000</td>
+			</tr>
+			<tr>
+				<td>or003</td>
+				<td>Nitheesh</td>
+				<td>12.12.2022</td>
+				<td>Delivered</td>
+				<td>Cat-Persian-Female-White</td>
+				<td>10000</td>
+			</tr>
+			<tr>
+				<td>or004</td>
+				<td>Pushparaj</td>
+				<td>24.11.2022</td>
+				<td>Delivered</td>
+				<td>Dog-Beagle-Male-brown</td>
+				<td>20000</td>
+			</tr>
+		</table>
+<h3 style="padding-left: 10%"><span style="color: #e67e22;">Generate Report </span> For Last <input type="text" placeholder="10Days" style="width: 10%"> Days
+			</h3>
+		<div style="padding-left: 35%">
+			<button class="btn" onclick="reportshow()">Generate Report</button>
+		</div>
+		<div class="report hidden" style="padding-top: 10%">
+			<h1 style="padding-left: 35%">
+				<span style="color: #e67e22;">OverAll </span>Report
+			</h1>
+			<form style="padding-left: 30%; padding-top: 20px">
+				<table class="table" style="Width: 50%;">
+					<tr>
+						<td>No.of.Order</td>
+						<td>:</td>
+						<td>25</td>
+					</tr>
+					<tr>
+						<td>Total Income</td>
+						<td>:</td>
+						<td>2500000</td>
+					</tr>
+					<tr>
+					<tr>
+						<td>Expenditure</td>
+						<td>:</td>
+						<td>150000</td>
+					</tr>
+					<tr>
+						<td>Tax Paid</td>
+						<td>:</td>
+						<td>13%(Rs23000)</td>
+					</tr>
+					<td>Profit %</td>
+					<td>:</td>
+					<td>12%</td>
+					</tr>
+					<tr>
+						<td>Orders Return %</td>
+						<td>:</td>
+						<td>NILL</td>
+					</tr>
+					<tr>
+						<td>No.of.Orders (Pre vs Cur)</td>
+						<td>:</td>
+						<td>3%(Dec)</td>
+					</tr>
+					<tr>
+						<td>Total Income (Pre vs Cur)</td>
+						<td>:</td>
+						<td>1%(Inc)</td>
+					</tr>
+					<tr>
+						<td>Expenditure (Pre vs Cur)</td>
+						<td>:</td>
+						<td>3%(Inc)</td>
+					</tr>
+					<tr>
+						<td>Profit (Pre vs Cur)</td>
+						<td>:</td>
+						<td>3%(Inc)</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	</body>
+	<script>
+	function reportshow(){
+		document.querySelector(".report").classList.remove("hidden");
+	}
+	
+	</script>
+	</html>
+	
